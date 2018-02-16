@@ -1,0 +1,632 @@
+@font-face {
+    font-family: 'affectionately_yoursregular';
+    src: url('affectionately_yours_-_ttf-webfont.woff2') format('woff2'),
+         url('affectionately_yours_-_ttf-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-top: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+header{
+	width: 80%;
+	margin-bottom: 2vh;
+	display: table;
+	vertical-align: middle;
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
+}
+
+h1{
+	font-family: "affectionately_yoursregular";
+	font-size: 55px;
+	font-weight: 600;
+	display: table-cell;
+}
+
+h2{
+	padding-top: 2vh;
+	padding-bottom: 1vh;
+	font-family: "affectionately_yoursregular";
+	font-size: 35px;
+	text-align: center;
+}
+
+h3{
+	font-family: "affectionately_yoursregular";
+	font-size: 40px;
+	text-align: center;
+	background: rgba(224, 156, 20, .8);
+}
+
+h4{
+	font-family: "affectionately_yoursregular";
+	font-size: 48px;
+	text-align: center;
+}
+
+input{
+	outline: 1px solid black;
+}
+
+.rateYo-city{
+	display: table-cell;
+	margin-left: 10px;
+	padding-right: 15px;
+}
+
+#new-user-info-modal{
+	top: 17%;
+	z-index: 3;
+}
+
+.login-modal-formatting{
+	position: absolute;
+	z-index: 1;
+	left: 20%;
+	top: 35%;
+	background-image: url("../images/dust_scratches.jpg");
+	width: 60%;
+	overflow: auto;
+	border: 2px solid black;
+	font-family: "Nunito"; 
+	padding-bottom: 2.5vh; 
+	padding-left: 2vw;
+}
+
+.login-modal-formatting form{
+	font-family: "Nunito";
+	font-size: 20px;
+}
+
+.login-modal-formatting h3{
+	background: none;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+}
+
+.login-modal-formatting input, .login-modal-formatting select{
+	margin-top: 1vh;
+	margin-bottom: 1.5vh;
+	width: 60%;
+	height: 24px;
+	font-size: 20px;
+}
+
+.login-modal-formatting .button{
+	width: 28%;
+	margin-top: 1.5vh;
+	margin-bottom: 1vh;
+}
+
+#custom-menu{
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
+	font-family: "Nunito";
+	font-size: 18px;
+	display: inline-block;
+	width: 100%;
+}
+
+#menu-heading{
+	float: left;
+	margin-left: 2vw;
+}
+
+#navigation{
+	text-align: center;
+	float: left;
+}
+
+#authentication{
+	text-align: center;
+	float: right;
+	margin-right: 2vw;
+}
+
+#custom-menu ul{
+	display: table;
+}
+
+#custom-menu li{
+	display: table-cell;
+	padding-left: 3vw;
+}
+
+#custom-menu .link:hover{
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.middle-row{
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	height: 86vh;
+}
+
+#weather-stats{
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 88%;
+	border-collapse: collapse;
+}
+
+.last-weather-day{
+	font-family: "Nunito";
+	display: table-row;
+}
+
+.weather-day {
+	font-family: "Nunito";
+	display: table-row;
+	border-bottom: 1px solid black;
+}
+
+.day-and-date {
+	font-size: 17px;
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 1.3vw;
+}
+
+.day {
+	font-weight: bold;
+}
+
+.date {
+	color: #fff;
+	font-size: 15px;
+}
+
+.daily-weather-image {
+	margin-left: 3vw;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.daily-weather-image img{
+	width: 58%;
+	height: auto;
+	display: block;
+	margin: auto;
+}
+
+.temperatures {
+	font-size: 17px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: right;
+	padding-right: 1.3vw
+}
+
+.temp-low {
+	color: #8cbdff;
+    text-shadow: .02rem .02rem black;
+}
+
+.display-none{
+	display: none;
+}
+
+.display-none-important{
+	display: none !important;
+}
+
+.display-block{
+	display: block;
+}
+
+.hidden-box-content{
+	margin-top: 3.1vh;
+}
+
+#images img{
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 15px;
+	border: 2px solid black;
+}
+
+.fadeIn{
+    -webkit-animation-name: fadeIn-animation;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.fadeOut{
+    -webkit-animation-name: fadeOut-animation;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-direction: normal;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+}
+
+.asterisk{
+	color: #a62d27;
+	font-family: "Nunito";
+}
+
+.event-prompt{
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 2.5vh;
+}
+
+.transparent-background{
+	background: rgba(124, 124, 124, .97);
+    border-radius: 1.2rem;
+}
+
+#main-content{
+	margin-top: 4vh;
+	margin-right: 3vw;
+	border-radius: 15px;
+	position: relative;
+	overflow: auto;
+	height: 68vh;
+}
+
+.subtitle {
+    margin-top: 400px;
+    text-align: center;
+    font-family: arial;
+    font-size: 1.1rem;
+    color: white;
+}
+
+#forecast{
+	height: 92%;
+}
+
+#weather-image{
+	width: 50px;
+	position: relative;
+	left: 1vw;
+	top: .8vh;
+	margin-right: 1vw;
+	display: table-cell;
+}
+
+.close-button{
+	width: 40px;
+	height: auto;
+	float: right;
+	margin-top: .4vh;
+	margin-right: .2vw;
+}
+
+.hover-pointer:hover{
+	cursor: pointer;
+}
+
+#event-form{
+	font-family: "Nunito";
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+#event-form legend{
+	padding-bottom: 1vh;
+	border-bottom: 2px solid black;
+	font-size: 24px;
+	margin-bottom: .7vh;
+}
+
+#event-form label{
+	font-family: "Nunito";
+	font-size: 18px;
+	font-weight: 500;
+}
+
+#event-form input{
+	font-family: "Nunito";
+	font-size: 18px;
+	margin-top: 1.5vh;
+	margin-bottom: 2.5vh;
+}
+
+#required-fields{
+	font-family: "Nunito";
+	font-size: 15px;
+	font-weight: 400;
+	margin-bottom: 0;
+	margin-top: 3vh;
+}
+
+#submit-event-form{
+	margin-right: 3vw;
+	margin-top: 1vh;
+	margin-bottom: 1.5vh;
+}
+
+.button{
+	font-family: "Nunito";
+	font-size: 18px;
+	font-weight: 700;
+	background: white;
+	border: 1px solid black;
+	text-align: center;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+}
+
+.next-btn{
+	position: absolute;
+	top: 80%;
+	left: 80%;
+	padding-left: 1.2vw;
+	padding-right: 1.2vw;
+}
+
+.button:hover{
+	cursor: pointer;
+	background: black;
+	color: white;
+}
+
+#event-form .event-checkboxes label{
+	display: block;
+	font-size: 16px;
+	line-height: 10px;
+}
+
+#event-form .event-checkboxes input{
+	vertical-align: 1px;
+	margin-right: .2vw;
+	-webkit-transform: scale(.8);
+}
+
+#event-listings{
+	font-family: "Nunito";
+	margin-bottom: 3vh;
+	margin-right: 2.5vw;
+	margin-left: 2.5vw;
+}
+
+#event-listings p{
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+#event-listings a{
+	color: black;
+	text-decoration: none;
+}
+
+#event-listings a:hover{
+	text-decoration: underline;
+}
+
+.event{
+	padding-top: 3vh;
+	padding-bottom: 3vh;
+	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.event-info{
+	line-height: 1.5;
+	font-size: 16px;
+	padding-left: 2vw;
+	padding-right: 2vw;
+}
+
+.event-even{
+	background: #c6def4;
+}
+
+.event-odd{
+	background: #e8eef4;
+}
+
+.event-title{
+	font-size: 25px;
+	font-weight: 700;
+}
+
+#page-navigation{
+	margin-top: 3vh;
+	width: 100%;
+	text-align: center;
+}
+
+#page-navigation img{
+	width: 2.3vw;
+	height: auto;
+}
+
+#left-arrow{
+	margin-right: 7vw;
+}
+
+@-webkit-keyframes fadeIn-animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut-animation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.hotel-choices {
+	position: relative;
+}
+
+.hotel-image {
+	height: 100px;
+	position: absolute;
+	top: 30%;
+	left: 10%;
+	border: none;
+}
+
+.hotel-info {
+	position: absolute;
+	top: 27%;
+	left: 35%;
+    font-family: "Nunito";
+    line-height: 1.5;
+    font-size: 1.5vw;
+}
+
+.hotel-website:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.rateYo-hotel{
+	position: absolute;
+	top: 79%;
+	left: 70%;
+}
+
+@media(max-width: 1075px) {
+	h2 {
+		font-size: 30px;
+	}
+}
+
+@media(max-width: 1024px) {
+	body{
+		height: 120vh;
+	}
+
+	h2 {
+		display: none;
+	}
+
+	header{
+		width: 90%;
+	}
+
+	form .event-form-body{
+		margin-left: 3.5vw;
+	}
+
+	form legend div{
+		margin-left: 3.5vw;
+	}
+
+	#submit-event-form {
+		width: 18%;
+	}
+
+	#main-content{
+		width: 100%;
+		height: 65vh;
+	}
+
+	#forecast{
+		height: auto;
+		padding-top: 2vh;
+		padding-bottom: 2vh;
+		display: table-row;
+		position: absolute;
+		bottom: -20vh
+	}
+
+	.hidden-box-content{
+		margin-top: 2vh;
+	}
+
+	.weather-day, .last-weather-day{
+		display: table-cell;
+		table-layout: fixed;
+		border: 1px solid black;
+		height: auto;
+	}
+
+	.daily-weather-image{
+		width: auto;
+	}
+
+	.weather-day img, .last-weather-day img{
+		width: 45%;
+		float: right;
+		padding-right: 1vw;
+	}
+
+	.day-and-date {
+		padding-left: 1vw;
+	}
+
+	.day{
+		font-size: 14px;
+	}
+
+	.date{
+		font-size: 14px;
+	}
+
+	.temperatures{
+		font-size: 14px;
+		float: right;
+		margin-top: 1.5vh;
+	}
+
+	#event-types{
+		margin-top: 2.5vh;
+	}
+
+@media(max-width: 660px) {
+	
+	body{
+		height: 130vh;
+	}
+
+	#forecast{
+		position: absolute;
+		bottom: -30vh;
+	}
+
+	h1{
+		font-size: 40px;
+	}
+
+	#back-to-index-button {
+		font-size: 10px;
+	}
+
+	h4{
+		font-size: 35px;
+	}
+
+	#menu-heading{
+		display: none;
+	}
+
+	#custom-menu{
+		font-size: 15px;
+	}
+	.hotel-info{ 
+		font-size: 4vw;
+	}
+}
