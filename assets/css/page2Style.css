@@ -9,7 +9,10 @@
 body{
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center center; 
+	background-position: center center;
+	margin-top: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 a {
@@ -19,7 +22,7 @@ a {
 
 header{
 	width: 80%;
-	margin-bottom: 6vh;
+	margin-bottom: 2vh;
 	display: table;
 	vertical-align: middle;
 	padding-top: 2.5vh;
@@ -50,7 +53,7 @@ h3{
 
 h4{
 	font-family: "affectionately_yoursregular";
-	font-size: 50px;
+	font-size: 48px;
 	text-align: center;
 }
 
@@ -148,7 +151,7 @@ input{
 }
 
 .middle-row{
-	margin-top: 4vh;
+	margin-top: 2vh;
 	margin-bottom: 2vh;
 	height: 86vh;
 }
@@ -210,7 +213,8 @@ input{
 }
 
 .temp-low {
-	color: #fff;
+	color: #8cbdff;
+    text-shadow: .02rem .02rem black;
 }
 
 .display-none{
@@ -265,7 +269,8 @@ input{
 }
 
 .transparent-background{
-	background: rgba(209, 209, 209, .8);
+	background: rgba(124, 124, 124, .97);
+    border-radius: 1.2rem;
 }
 
 #main-content{
@@ -274,7 +279,15 @@ input{
 	border-radius: 15px;
 	position: relative;
 	overflow: auto;
-	height: 62vh;
+	height: 68vh;
+}
+
+.subtitle {
+    margin-top: 400px;
+    text-align: center;
+    font-family: arial;
+    font-size: 1.1rem;
+    color: white;
 }
 
 #forecast{
@@ -305,6 +318,7 @@ input{
 #event-form{
 	font-family: "Nunito";
 	font-weight: 600;
+	font-size: 1.2rem;
 }
 
 #event-form legend{
@@ -355,9 +369,9 @@ input{
 .next-btn{
 	position: absolute;
 	top: 80%;
-	left: 82%;
-	padding-left: 1.4vw;
-	padding-right: 1.4vw;
+	left: 80%;
+	padding-left: 1.2vw;
+	padding-right: 1.2vw;
 }
 
 .button:hover{
@@ -369,6 +383,7 @@ input{
 #event-form .event-checkboxes label{
 	display: block;
 	font-size: 16px;
+	line-height: 10px;
 }
 
 #event-form .event-checkboxes input{
@@ -382,6 +397,11 @@ input{
 	margin-bottom: 3vh;
 	margin-right: 2.5vw;
 	margin-left: 2.5vw;
+}
+
+#event-listings p{
+    text-align: center;
+    font-size: 2.5vw;
 }
 
 #event-listings a{
@@ -428,7 +448,7 @@ input{
 }
 
 #page-navigation img{
-	width: 35px;
+	width: 2.3vw;
 	height: auto;
 }
 
@@ -471,10 +491,15 @@ input{
 .hotel-info {
 	position: absolute;
 	top: 27%;
-	left: 40%;
-	font-family: "Nunito";
-	line-height: 1.5;
-	font-size: 2vw;
+	left: 35%;
+    font-family: "Nunito";
+    line-height: 1.5;
+    font-size: 1.5vw;
+}
+
+.hotel-website:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .rateYo-hotel{
