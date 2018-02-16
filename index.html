@@ -11,6 +11,7 @@
 	
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	
@@ -38,72 +39,42 @@
 
 	<div class="weather-screen display-none">
 
-		<div class="pure-g middle-row">
+		<div class="pure-g weather-bar">
 
-			<div class="pure-u-24-24">
+			<div class= "pure-u-1-4 weather-icon" data-weather="snow"><img src="assets/images/icon_snowy_70.png"></div>
+			<div class= "pure-u-1-4 weather-icon" data-weather="clear-day" data-temp="hot"><img src="assets/images/icon_sunny_70.png"></div>
+			<div class= "pure-u-1-4 weather-icon" data-weather="clear-day" data-temp="cold" id = "three-clouds"><img src="assets/images/icon_overcast_70.png"></div>
+			<div class= "pure-u-1-4 weather-icon" data-weather="rain"><img src="assets/images/icon_rainy_70.png"></div>
 
-				<div class= "pure-u-5-24 empty"></div>
-				<div class= "pure-u-3-24 weather-icon" id="snow">SNOW</div>
-				<div class= "pure-u-3-24 weather-icon" id="clear-day-hot" data-temp="hot">HOT</div>
-				<div class= "pure-u-3-24 weather-icon" id="clear-day-cold" data-temp="cold">OVERCAST / TEMPERATE</div>
-				<div class= "pure-u-3-24 weather-icon" id="rain">RAIN</div>
+		</div>
 
-			</div>
-
-			<div class="pure-u-24-24">
-
-				<div class="pure-u-8-24"></div>
-				<div class="pure-u-8-24 weather">Select an ideal weather condition</div>
-				<div class="pure-u-8-24"></div>
-
-			</div>
-
+		<div class="pure-g weather">
+			<div class = "pure-u-1-1" id = "select-condition">Select an ideal weather condition</div>
 		</div>
 
 		<hr class="breaker">
 		
-		<div class="line snow display-none">YOU HAVE SELECTED SNOW!</div>
-		<div class="line overcast display-none">YOU HAVE SELECTED OVERCAST!</div>
-		<div class="line sunny display-none">YOU HAVE SELECTED SUNNY!</div>
-		<div class="line rain display-none">YOU HAVE SELECTED RAIN!</div>
+		<div class="pure-g line">
+			<span class="pure-u-1-1" id="selection-notification"></span>
+		</div>
 
 	</div>
 
 <!-- ============== CITY SELECT SCREEN HERE ============== -->
 
 
-	<div class="pure-g button-screen display-none">
+	<div class="button-screen display-none" id = "screen-of-buttons">
 
-		<div class= "pure-u-18-24 button-row">
+		<div class = "pure-g destination-bar">
+			<div class = "pure-u-1-1" id="pick-destination">Pick your destination!</div>
+			<div class = "pure-u-1-1" id="back-to-weather">Return to weather</div>
+		</div>
 
-			<div class= "pure-u-14-24 select">Pick your destination!</div>
-
-			<div class="city-button">
-					
-			</div>
-
+		<div class="city-button">
 		</div>
 
 	</div>
 
-	<form class="pure-form review-form display-none">
-
-		<div class="review-line">Review Your Experience using Remoting in Style</div>
-
-	    <fieldset class="pure-group">
-	        <input type="text" class="pure-input-1-2" placeholder="Name">
-	        <input type="date" class="pure-input-1-2" placeholder="Travel Start Date">
-	        <input type="date" class="pure-input-1-2" placeholder="Travel End Date">
-	        <input type="text" class="pure-input-1-2" placeholder="City Visited">
-	        <input type="text" class="pure-input-1-2" placeholder="Events Visited">
-	    </fieldset>
-
-	    <fieldset class="pure-group">
-	        <textarea class="pure-input-1-2" placeholder="leave additional comments here.."></textarea>
-	    </fieldset>
-
-	    <button type="submit" class="pure-button pure-input-1-2 pure-button-primary">Submit Review</button>
-	</form>
-
 	<script type="text/javascript" src="assets/javascript/logic.js"></script>
+	<script type="text/javascript" src="assets/javascript/page2Logic.js"></script>
 </body>

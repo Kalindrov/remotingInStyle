@@ -1,48 +1,123 @@
-<!DOCTYPE html> <html lang="en">
+	<!DOCTYPE html> <html lang="en">
 
 <head>
 
 	<meta charset="UTF-8">
 
-	<title>Remoting in Style</title>
+	<title>Remote in Style</title>
 
 	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
-	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/datepicker.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/jquery.rateyo.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/page2Style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 </head>
 
-<body>
-
-	<div class="pure-g top-row">
-		<div class="pure-u-18-24">
-			<header>
-				<img src = "assets/images/sun.png" id = "weather-image">
-				<h1>Welcome to <span class = "city"></span></h1>
+<body id = "page2body">
+	<div class = "display-none login-modal-formatting" id = "login-modal">
+		<img src="assets/images/close-button.png" id="close-login-modal" class="hover-pointer close-button">
+		<h3>Log In</h3>
+		<form>
+			<p>Click "Create Account" if you do not have an account</p><br>
+			<label for = "login-email-address">Email Address:</label><br>
+			<input type = "text" id = "login-email-address"><br>
+			<label for = "login-password">Password:</label><br>
+			<input type = "password" id = "login-password"><br>
+			<div id = "submit-login" class = "button">Submit</div>
+			<p id = "login-error" class = "asterisk"></p>
+		</form>
+	</div>
+	<div class = "display-none login-modal-formatting" id = "signup-modal">
+		<img src="assets/images/close-button.png" id="close-signup-modal" class="hover-pointer close-button">
+		<h3>Create an Account</h3>
+		<form>
+			<p>Click "Log In" if you already have an account</p><br>
+			<label for = "signup-email-address">Email Address:</label><br>
+			<input type = "text" id = "signup-email-address"><br>
+			<label for = "signup-password">Password:</label><br>
+			<input type = "password" id = "signup-password"><br>
+			<label for = "confirm-password">Confirm Password:</label><br>
+			<input type = "password" id = "confirm-password">
+			<div id = "submit-new-account" class = "button">Submit</div>
+			<p id = "signup-error" class = "asterisk"></p>
+		</form>
+	</div>
+	<div class = "login-modal-formatting display-none" id = "new-user-info-modal">
+		<img src="assets/images/close-button.png" id="close-new-user-info-modal" class="hover-pointer close-button">
+		<h3>Please Tell Us a Bit About Yourself</h3>
+		<form>
+			<label for = "user-first-name">First Name:</label><br>
+			<input type = "text" id = "user-first-name"><br>
+			<label for = "user-last-name">Last Name:</label><br>
+			<input type = "text" id = "user-last-name"><br>
+			<label for = "user-age">Age:</label><br>
+			<input type = "text" id = "user-age"><br>
+			<label for = "user-country">Country:</label><br>
+			<select id = "user-country"></select><br>
+			<label for = "user-state">State:</label><br>
+			<select id = "user-state"></select><br><br>
+			<p class = "asterisk">All fields are required<p>
+			<div id = "submit-new-user-info" class = "button">Submit</div>
+			<p id = "new-user-info-error" class = "asterisk"></p>
+		</form>
+	</div>
+	<div class = "transparent-background" id = "custom-menu">
+		<div id = "menu-heading">
+			Explore <span class = "city"></span>:</div>
+		<div id = "navigation">
+			<ul>
+				<li class = "info link" value = "slideshow">Photos</li>
+				<li>|</li>
+				<li class = "info link" value = "hotels">Hotels</li>
+				<li>|</li>
+				<li class = "info link" value = "events">Events</li>
+			</ul>
+		</div>
+		<div id = "authentication">
+			<ul id = "enter-account">
+				<li id = "log-in" class = "link">Log In</li>
+				<li>|</li>
+				<li id = "create-account" class = "link">Create Account</li>
+			</ul>
+			<ul id = "exit-account" class = "display-none-important">
+				<li>Welcome <span id = "user-name" class = ""></span></li>
+				<li>|</li>
+				<li id = "log-out" class = "link">Log Out</li>
+			</ul>
+		</div>
+	</div>
+	<div class="pure-g middle-row">
+		<div class="pure-u-lg-1-24"></div>
+		<div class="pure-u-lg-16-24">
+			<header class = "transparent-background">
+				<a href="index.html" id="weather-image-link"><img id = "weather-image"></a>
+				<span class = "rateYo-city"></span>
+				<a href="index.html" id="city-name-link"><h1 id="city-name">Welcome to <span class = "city"></span></h1></a>
 			</header>
-			<div class="display-none" id = "main-content">
-				<img src="assets/images/close-button.png" id="close-button" class="hover-pointer"><br>
+			<div class="display-none transparent-background" id = "main-content">
+				<img src="assets/images/close-button.png" id="close-content" class="hover-pointer close-button"><br>
 				<div class = "display-none content" id = "slideshow">
 					<h4>Destination Photos</h4>
 					<div class = "hidden-box-content" id = "images"></div>
 				</div>
 				<div class = "display-none content" id = "hotels">
-					<h4>Local hotels</h4>
+					<h4>Local Hotels</h4>
 					<div class = "hidden-box-content" id = "hotel-choices">
 								
-						<img class="hotel-image" src="assets/images/hotel.png">
+						<img class= "hotel-image" src = "assets/images/hotel.png">
 
 						<div class="hotel-info">
-							<h5 class="hotel-name"></h5>
+							<p class="hotel-name"></p>
 							<p class="hotel-address"></p>
-							<p class="hotel-website"></p>
+							<p class="hotel-number"></p>
 						</div>
 
-						<button class="next-btn">next</button>
+						<div class = "rateYo-hotel"></div> 
+						<button class="button next-btn">Next</button>
 						
 					</div>
 				</div>
@@ -50,10 +125,14 @@
 					<h4>Upcoming Events</h4>
 					<div class = "hidden-box-content display-none" id = "event-form">
 						<form>
-							<legend>Filter for Awesome and Engaging Events</legend>
+							<legend class = "pure-g">
+								<div class = "pure-u-lg-1-24"></div>
+								<div class = "pure-u-lg-22-24">Filter for Awesome and Engaging Events</div>
+							</legend>
 							<br>
-							<div class = "pure-g">
-								<div class = "pure-u-3-8">
+							<div class = "pure-g event-form-body">
+								<div class = "pure-u-lg-1-24"></div>
+								<div class = "pure-u-lg-8-24">
 									<div class = "event-prompt">When Will You Need a Break?</div>
 									<label for = "start-date">Start Date: <span class = "asterisk">*</span></label><br>
 									<input data-toggle = "datepicker" id = "start-date"><br>
@@ -64,23 +143,22 @@
 									<input type = "text" id = "address-event-form"><br>
 									<label for = "maximum-distance">Maxium Distance to Travel (mi):</label><br>
 									<input type = "text" id = "maximum-distance"><br>
-									<div id = "required-fields"><span class = "asterisk">*</span> denotes a required field</div>
-									<div id = "submit-event-form">Submit</div>
-									<p id = "validation" class = "asterisk"></p>
-	        						<p id = "" class = "display-none asterisk">Distance must be a number greater than zero</p>
 								</div>
-								<div class = "pure-u-1-8">
+								<div class = "pure-u-lg-1-24">
 								</div>
-								<div class = "pure-u-1-2">
+								<div class = "pure-u-lg-13-24" id = "event-categories">
 									<div class = "event-prompt" id = "event-types">What types of events do you like? <span class = "asterisk">*</span></div>
-									<div class = "pure-u-7-24 event-checkboxes">
-										<label><input type = "checkbox" id = "art"> Art</label> <label><input type = "checkbox" id = "books"> Books</label> <label><input type = "checkbox" id = "business"> Business</label> <label><input type = "checkbox" id = "comedy"> Comedy</label> <label><input type = "checkbox" id = "music"> Concerts</label> <label><input type = "checkbox" id = "learning_education"> Education</label> <label><input type = "checkbox" id = "family_fun_kids"> Family</label> 
+									<div class = "pure-u-lg-7-24 event-checkboxes">
+										<label><input type = "checkbox" id = "art"> Art</label> <label><input type = "checkbox" id = "books"> Books</label> <label><input type = "checkbox" id = "business"> Business</label> <label><input type = "checkbox" id = "fundraisers"> Charity</label> <label><input type = "checkbox" id = "comedy"> Comedy</label> <label><input type = "checkbox" id = "music"> Concerts</label> <label><input type = "checkbox" id = "learning_education"> Education</label>
 									</div>
-									<div class = "pure-u-7-24 event-checkboxes">
-										<label><input type = "checkbox" id = "festivals_parades"> Festivals</label> <label><input type = "checkbox" id = "movies_film"> Film</label> <label><input type = "checkbox" id = "food"> Food</label> <label><input type = "checkbox" id = "fundraisers"> Fundraisers</label> <label><input type = "checkbox" id = "support"> Health</label> <label><input type = "checkbox" id = "attractions"> Museums</label> <label><input type = "checkbox" id = "singles_social"> Nightlife</label>
+									<div class = "pure-u-lg-7-24 event-checkboxes">
+										<label><input type = "checkbox" id = "family_fun_kids"> Family</label> <label><input type = "checkbox" id = "festivals_parades"> Festivals</label> <label><input type = "checkbox" id = "movies_film"> Film</label> <label><input type = "checkbox" id = "food"> Food</label> <label><input type = "checkbox" id = "support"> Health</label> <label><input type = "checkbox" id = "attractions"> Museums</label> <label><input type = "checkbox" id = "singles_social"> Nightlife</label>
 									</div>
-									<div class = "pure-u-9-24 event-checkboxes">
+									<div class = "pure-u-lg-9-24 event-checkboxes">
 										<label><input type = "checkbox" id = "outdoors_recreation"> Outdoors</label> <label><input type = "checkbox" id = "performing_arts"> Performances</label> <label><input type = "checkbox" id = "animals"> Pets</label> <label><input type = "checkbox" id = "politics_activism"> Politics</label> <label><input type = "checkbox" id = "religion_spirituality"> Religion</label> <label><input type = "checkbox" id = "sports"> Sports</label> <label><input type = "checkbox" id = "technology"> Technology</label>
+										<div id = "required-fields"><span class = "asterisk">*</span> denotes a required field</div>
+										<div id = "submit-event-form" class="button">Submit</div>
+										<p id = "validation" class = "asterisk"></p>
 									</div>
 								</div>
 							</div>
@@ -93,41 +171,20 @@
 						</div>
 					</div>
 				</div>
-				<div class="display-none content" id="reviews">
-					<div class ="hidden-box-content" id="">	
-					</div>
-				</div>
 			</div>
 		</div>
 
-		<div class="pure-u-2-24"></div>
-		<div class="pure-u-4-24 has-text" id = "forecast">
-			<h2>Ten Day Forecast</h2>
+		<div class="pure-u-lg-1-24"></div>
+		<div class="pure-u-lg-5-24 transparent-background" id = "forecast">
+			<h2>Seven Day Forecast</h2>
 			<div id="weather-stats"></div>
 		</div>
 	</div>
 
-	<div class="pure-g bottom-row" id = "bottom-navigation">
-		<div class = "pure-u-1-24"></div>
-		<div class= "pure-u-5-24 info" id="city-photos" value="slideshow">
-			<h3>Photos of <span class = "city"></span></h3>
-		</div>
-		<div class = "pure-u-1-24"></div>
-		<div class= "pure-u-5-24 info" id="hotel-options" value = "hotels">
-			<h3>Hotel Options in <span class = "city"></span></h3>
-		</div>
-		<div class = "pure-u-1-24"></div>
-		<div class= "pure-u-5-24 info" id="upcoming-events" value = "events">
-			<h3>Upcoming Events in <span class = "city"></span></h3>
-		</div>
-		<div class = "pure-u-1-24"></div>
-		<div class= "pure-u-5-24 info" id="city-reviews" value = "reviews">
-			<h3>Reviews of <span class = "city"></span></h3>
-		</div>
-	</div>
-
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<script src="assets/javascript/countries.js"></script>
 	<script src="assets/javascript/datepicker.js"></script>
+	<script src="assets/javascript/jquery.rateyo.js"></script>
 	<script src="assets/javascript/page2Logic.js"></script>
 
 </body>
